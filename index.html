@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>three.js starter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background-cont"></div>
+
+    <div id="main">
+        <div id="canvas2-cont"></div>
+        <h2 id="header-logo" class="font2">.WAV</h2>
+        <button id="mainCTA">Explore now</button>
+        <div id="var-text-cont"><p id="variable-text" class="font2"><span id="varying">XYZXYYZY</span>.WAV</p></div>
+    </div>
+
+    <h1 id="text-main" class="font2"><span class="bolder">Music</span> meets <span class="bolder">Crypto</span> meets The <span class="bolder">future</span></h1>
+
+    
+    <div id="cursor"><div></div></div>
+
+    <script type="module" src="js/three-bg.js"></script>
+    <script type="module" src="js/three-canvas2.js"></script>
+    
+</body>
+<style>
+
+    body {
+        width: 100vw; height: 100vh;
+        margin: 0; padding: 0;
+        overflow: hidden;
+        font-family: 'Manrope', sans-serif; 
+        color: white;
+        background-color: #141414;
+        cursor: none;
+    }
+
+    .font2 {
+        font-family: 'Titillium Web', sans-serif;
+    }
+
+    h1 {
+        font-size: 36px; font-weight: 100;
+    }
+
+    .bolder {
+        font-weight: 400;
+    }
+
+    canvas {width: 100vw; height: 100vh;}
+
+    #cursor {
+        z-index: 2;
+        position: absolute;
+        left: 200px; bottom: 400px;
+        width: 30px; height: 30px;
+        border-radius: 50%;
+        pointer-events: none;
+        backdrop-filter: invert(100%) hue-rotate(180deg);
+        display: flex; align-items: center; justify-content: center;
+    }
+
+    #cursor div {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background-color: white;
+    }
+    
+    
+    #background-cont {
+        position: fixed;
+        top: 0; left: 0;
+        pointer-events: none;
+        width: 100vw; height: 100vh;
+        opacity: 90%;
+        filter: blur(10px);
+    }
+    
+    #text-main {
+        position: absolute;
+        width: max-content;
+        top: 15%; left: 50%; transform: translateX(-50%);
+        text-shadow: 0px 0px 25px #000000;
+    }
+
+
+    #main {
+        position: absolute;
+        width: 60%; height: 50%;
+        bottom: 15%; left: 20%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+    }
+
+    #canvas2-cont {
+        position: absolute;
+        top: 0; right: 0;
+        width: 50%; height: 100%;
+        pointer-events: none;
+    }
+
+    #header-logo {
+        margin: 0; padding: 0;
+        font-size: 24px;
+    }
+
+    #mainCTA {
+        position: absolute;
+        left: 10%; top: 50%; transform: translateY(-60%);
+        font-family: inherit;
+        font-size: 36px; font-weight: 100;
+        color: white;
+        background: none; border: none; outline: none;
+    }
+
+    #mainCTA::before {
+        content: "";
+        position: absolute;
+        top: 110%;
+        height: 4px; width: 0%;
+        color: white; background-color: white;
+        transition: width 0.5s;
+    }
+
+    #mainCTA:hover::before {
+        width: 100%;
+    }
+
+    #var-text-cont {
+        position: absolute;
+        left: 0px; bottom: 0px;
+        width: 100%; height: 20%;
+        margin: 0; padding: 0;
+        display: flex; justify-content: center;
+    }
+
+    #variable-text {
+        margin: 0; padding: 0;
+        font-size: 54px; font-weight: 100;
+    }
+
+</style>
+<script src="js/main.js"></script>
+</html>
