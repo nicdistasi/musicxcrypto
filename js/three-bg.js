@@ -83,7 +83,7 @@ const render = () => {
   //app.renderer.render(app.scene, app.camera);
   app.composer.render();
 
-  app.counter+= 0.2;
+  app.counter+= 0.1;
 
   for (let x = 0; x < elems.cubePlane.length; x++) {
     for (let z = 0; z < elems.cubePlane.length; z++) {
