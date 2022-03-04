@@ -63,7 +63,7 @@ const render = () => {
   //app.renderer.render(app.scene, app.camera);
   app.composer.render();
 
-  app.counter+= 0.05;
+  app.counter+= 0.02;
 
   line.rotation.x = app.counter;
   line.rotation.y = app.counter/2;
